@@ -1,0 +1,243 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a; /* Latar belakang gelap */
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header */
+header {
+    background-color: rgba(26, 26, 26, 0.95);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.version {
+    color: #ff4d94; /* Warna Pink Mawar */
+    font-size: 16px;
+    font-weight: 400;
+    vertical-align: super;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a:hover {
+    color: #ff4d94;
+}
+
+.btn-demo {
+    background-color: #ff4d94;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.btn-demo:hover {
+    background-color: #e60073;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* offset header */
+    background: radial-gradient(circle at center, #331a24 0%, #1a1a1a 70%);
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #b0b0b0;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #ff4d94;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e60073;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #ff4d94;
+    color: #ff4d94;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 77, 148, 0.1);
+}
+
+.hero-image {
+    flex-shrink: 0;
+}
+
+.ai-avatar {
+    font-size: 150px;
+    background: #333;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 5px solid #ff4d94;
+    box-shadow: 0 0 50px rgba(255, 77, 148, 0.3);
+    animation: pulse 2s infinite;
+}
+
+/* Fitur Section */
+.features {
+    padding: 100px 0;
+    background-color: #121212;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 60px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    border-color: #ff4d94;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.feature-item .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ff4d94;
+}
+
+.feature-item h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    color: #a0a0a0;
+    font-size: 15px;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Animasi sederhana */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 77, 148, 0.4); }
+    70% { box-shadow: 0 0 0 30px rgba(255, 77, 148, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 77, 148, 0); }
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-text h1 { font-size: 32px; }
+    .hero-btns { justify-content: center; flex-direction: column; }
+    nav ul { display: none; } /* Sederhananya sembunyikan menu di mobile */
+    .ai-avatar { width: 150px; height: 150px; font-size: 80px; }
+  }
